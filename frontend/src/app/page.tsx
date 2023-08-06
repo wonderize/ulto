@@ -15,8 +15,8 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Header>
-        <button className={styles.control}>
-          <FontAwesomeIcon className={styles.controlIcon} icon={faBars} />
+        <button className={styles.menu}>
+          <FontAwesomeIcon className={styles.menuIcon} icon={faBars} />
         </button>
       </Header>
       <div className={styles.wrapper}>

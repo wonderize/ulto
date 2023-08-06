@@ -5,3 +5,9 @@
   color: var(--dark-green);
   user-select: none;
 }
+
+@media screen and (max-width: 900px) {
+  .logo {
+    grid-column-start: 2;
+  }
+}

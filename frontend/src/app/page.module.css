@@ -19,18 +19,18 @@
   padding: 1.5rem var(--global-offset);
 }
 
-.control {
+.control, .menu {
   background: transparent;
 }
 
-.controlIcon {
+.controlIcon, .menuIcon {
   font-size: 2rem;
   color: black;
 }
 
 .date {
   font-family: var(--open-sans);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }
 
 .schedule {
@@ -39,6 +39,12 @@
 
 @media screen and (max-width: 400px) {
   .date {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .date {
+    font-size: 1.125rem;
   }
 }
