@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 2px solid var(--dark-green);
+}
+
+:root {
+  --global-offset: 1.5rem;
+  --desktop-max-width: 1440px;
+  --border-radius: 5px;
+  --card-padding: 1rem;
+
+  --dark-green: rgb(0, 145, 58);
+  --darker-green: rgb(0, 81, 33);
+  --green-base: rgba(0, 209, 84);
+  --bright-green: rgba(0, 222, 89);
+  --light-green: rgba(0, 184, 73);
+
+  --dark-scheme-bg-color: #1b1b1b;
+  --dark-scheme-font-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: var(--dark-scheme-bg-color);
+    color: var(--dark-scheme-font-color);
+    caret-color: var(--dark-scheme-font-color);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+a {
+  color: var(--dark-green);
+}
+
+button {
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}

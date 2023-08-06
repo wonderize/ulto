@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 275px;
+}
+
+.title {
+  font-family: var(--roboto);
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2.25rem;
+}
+
+.forgotButton {
+  font-family: var(--roboto);
+  margin-top: 1.5rem;
+  align-self: center;
+}
+
+@media screen and (max-width: 900px) {
+  .title {
+    text-align: center;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+}

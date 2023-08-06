@@ -1,0 +1,46 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.left,
+.right {
+  width: 50%;
+}
+
+.left {
+  max-width: calc(var(--desktop-max-width) / 2);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formWrapper {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.right {
+  background-color: var(--dark-green);
+}
+
+@media screen and (max-width: 900px) {
+  .main {
+    justify-content: center;
+  }
+
+  .left {
+    max-width: 500px;
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .right {
+    display: none;
+  }
+}

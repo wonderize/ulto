@@ -1,0 +1,7 @@
+.logo {
+  font-size: 2rem;
+  font-family: var(--open-sans);
+  font-weight: 700;
+  color: var(--dark-green);
+  user-select: none;
+}
