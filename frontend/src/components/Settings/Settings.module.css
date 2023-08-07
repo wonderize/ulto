@@ -1,0 +1,39 @@
+.wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  padding: 0 var(--global-offset);
+}
+
+.title {
+  font-family: var(--open-sans);
+  padding: 1.5rem 0;
+}
+
+.parameter {
+  margin-bottom: 0.75rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textWrapper {
+  margin-bottom: 0.75rem;
+}
+
+.parameterTitle {
+  font-family: var(--roboto);
+  font-weight: 500;
+  margin-bottom: 0.125rem;
+}
+
+.description {
+  font-weight: 200;
+  font-family: var(--open-sans);
+}
+
+@media (prefers-color-scheme: dark) {
+  .wrapper {
+    background-color: var(--dark-scheme-bg-color);
+  }
+}

@@ -1,7 +1,11 @@
 import Logo from "../Logo/Logo"
 import styles from "./Header.module.css"
 
-export default function Header({ children }: { children: JSX.Element | never[] }) {
+interface HeaderProps {
+  children: JSX.Element | JSX.Element[] | never[]
+}
+
+export default function Header({ children }: HeaderProps) {
   return (
     <header className={styles.header}>
       <div className={styles.wrapper}>

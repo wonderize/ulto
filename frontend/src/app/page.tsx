@@ -1,7 +1,11 @@
+"use client"
+
+import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import Header from "@/components/Header/Header"
 import ClassCard from "@/components/ClassCard/ClassCard"
+import Settings from "@/components/Settings/Settings"
 
 import {
   faChevronRight,
@@ -12,14 +16,23 @@ import {
 import styles from "./page.module.css"
 
 export default function Home() {
+  const [isSettingsVisible, setSettingsVisibility] = useState(false)
+
+  const handleButtonOnClick = () => {
+    setSettingsVisibility(!isSettingsVisible)
+  }
+
+  const settingsComponent = isSettingsVisible ? <Settings /> : null
+
   return (
     <main className={styles.main}>
       <Header>
-        <button className={styles.menu}>
+        <button className={styles.menu} onClick={handleButtonOnClick}>
           <FontAwesomeIcon className={styles.menuIcon} icon={faBars} />
         </button>
       </Header>
       <div className={styles.wrapper}>
+        {settingsComponent}
         <div className={styles.controls}>
           <button className={styles.control}>
             <FontAwesomeIcon

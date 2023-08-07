@@ -48,3 +48,9 @@
     font-size: 1.125rem;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .controlIcon, .menuIcon {
+    color: white;
+  }
+}
