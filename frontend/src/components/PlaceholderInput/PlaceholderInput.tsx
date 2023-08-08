@@ -1,4 +1,5 @@
-import styles from "./Input.module.css"
+import inputStyle from "@/styles/templates/Input.module.css"
+import styles from "./PlaceholderInput.module.css"
 
 interface InputProps {
   placeholder: string
@@ -9,7 +10,7 @@ export default function Input({ placeholder, type }: InputProps) {
   return (
     <div className={styles.wrapper}>
       <input
-        className={styles.input}
+        className={`${inputStyle.input} ${styles.input}`}
         type={type}
         placeholder={placeholder}
         autoFocus

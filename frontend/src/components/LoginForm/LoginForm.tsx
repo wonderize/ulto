@@ -1,4 +1,4 @@
-import Input from "../Input/Input"
+import PlaceholderInput from "../PlaceholderInput/PlaceholderInput"
 import Button from "../Button/Button"
 
 import styles from "./LoginForm.module.css"
@@ -7,11 +7,11 @@ export default function LoginForm() {
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.title}>Вход</h1>
-      <Input
+      <PlaceholderInput
         placeholder="Имя пользователя"
         type="text"
       />
-      <Input
+      <PlaceholderInput
         placeholder="Пароль"
         type="password"
       />

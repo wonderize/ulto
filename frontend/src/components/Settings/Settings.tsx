@@ -1,4 +1,4 @@
-import Input from "@/components/Input/Input"
+import PlaceholderInput from "@/components/PlaceholderInput/PlaceholderInput"
 import Button from "@/components/Button/Button"
 
 import styles from "./Settings.module.css"
@@ -12,7 +12,7 @@ export default function Settings() {
           <h2 className={styles.parameterTitle}>Выбор группы</h2>
           <p className={styles.description}>Выбор группы по умолчанию</p>
         </div>
-          <Input
+          <PlaceholderInput
             placeholder="Группа"
             type="search"
           />
@@ -22,7 +22,7 @@ export default function Settings() {
           <h2 className={styles.parameterTitle}>Тема</h2>
           <p className={styles.description}>Выбор темы по умолчанию</p>
         </div>
-          <Input
+          <PlaceholderInput
             placeholder="Тема"
             type="search"
           />
