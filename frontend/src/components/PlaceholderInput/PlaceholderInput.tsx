@@ -1,12 +1,12 @@
 import inputStyle from "@/styles/templates/Input.module.css"
 import styles from "./PlaceholderInput.module.css"
 
-interface InputProps {
+interface PlaceholderInputProps {
   placeholder: string
   type: "email" | "number" | "password" | "search" | "tel" | "text" | "url"
 }
 
-export default function Input({ placeholder, type }: InputProps) {
+export default function PlaceholderInput({ placeholder, type }: PlaceholderInputProps) {
   return (
     <div className={styles.wrapper}>
       <input
