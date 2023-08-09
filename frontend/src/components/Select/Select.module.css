@@ -13,8 +13,8 @@
   clip-path: polygon(100% 0%, 0 0%, 50% 100%);
   background-color: black;
   justify-self: end;
-  pointer-events: none;
   margin-right: 0.5rem;
+  pointer-events: none;
 }
 
 .select {
@@ -28,6 +28,10 @@
   cursor: inherit;
   line-height: inherit;
   outline: none;
+}
+
+.select:required:invalid {
+  color: rgb(189, 189, 189);
 }
 
 .select,

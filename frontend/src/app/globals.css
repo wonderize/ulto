@@ -29,6 +29,18 @@
   --dark-scheme-font-color: white;
 }
 
+a {
+  color: var(--dark-green);
+}
+
+button {
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     background-color: var(--dark-scheme-bg-color);
@@ -41,16 +53,4 @@
   html {
     font-size: 14px;
   }
-}
-
-a {
-  color: var(--dark-green);
-}
-
-button {
-  border: none;
-}
-
-button:hover {
-  cursor: pointer;
 }
