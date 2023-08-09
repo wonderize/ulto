@@ -1,6 +1,5 @@
 .input {
   border: none;
-  padding: 0.85rem 0.5rem;
   font-size: 1rem;
   font-family: var(--roboto);
   outline: 1px solid rgb(189, 189, 189);
@@ -8,6 +7,7 @@
   background: none;
   transition: 0.1s ease;
   user-select: none;
+  display: block;
 }
 
 .input:focus {

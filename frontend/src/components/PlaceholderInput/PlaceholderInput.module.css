@@ -9,6 +9,7 @@
 
 .input {
   width: 100%;
+  padding: 0.85rem 0.5rem;
 }
 
 /* Hide placeholder while input is focused */
