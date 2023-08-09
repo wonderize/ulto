@@ -31,7 +31,7 @@
 }
 
 .select:required:invalid {
-  color: rgb(189, 189, 189);
+  color: var(--color-inactive);
 }
 
 .select,

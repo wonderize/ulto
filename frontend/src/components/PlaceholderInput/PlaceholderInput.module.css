@@ -27,7 +27,7 @@
   top: 12px;
   left: 13px;
   font-family: var(--roboto);
-  color: rgb(189, 189, 189);
+  color: var(--color-inactive);
   font-size: 1rem;
   transition: 0.3s ease;
   pointer-events: none;
@@ -55,7 +55,7 @@
 
 /* Change placeholder's color while input persists */
 .input:not(:placeholder-shown).input:not(:focus) + .placeholder {
-  color: rgb(189, 189, 189);
+  color: var(--color-inactive);
 }
 
 @media (prefers-color-scheme: dark) {

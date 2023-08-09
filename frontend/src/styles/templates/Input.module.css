@@ -2,7 +2,7 @@
   border: none;
   font-size: 1rem;
   font-family: var(--roboto);
-  outline: 1px solid rgb(189, 189, 189);
+  outline: 1px solid var(--color-inactive);
   border-radius: var(--border-radius);
   background: none;
   transition: 0.1s ease;

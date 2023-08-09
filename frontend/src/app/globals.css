@@ -24,6 +24,8 @@
   --green-base: rgba(0, 209, 84);
   --bright-green: rgba(0, 222, 89);
   --light-green: rgba(0, 184, 73);
+  
+  --color-inactive: rgb(189, 189, 189);
 
   --dark-scheme-bg-color: #1b1b1b;
   --dark-scheme-font-color: white;
