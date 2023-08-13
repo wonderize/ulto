@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Header from "@/components/Header/Header"
 import ClassCard from "@/components/ClassCard/ClassCard"
 import Settings from "@/components/Settings/Settings"
+import Button from "@/components/Button/Button"
 
 import {
   faChevronRight,
@@ -27,6 +28,11 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Header>
+        {/* TODO: Turn `Button` into reusable component */}
+        <Button
+          style={{gridColumnStart: -1}}
+          placeholder="Войти"
+        />
         <button className={styles.menu} onClick={handleButtonOnClick}>
           <FontAwesomeIcon className={styles.menuIcon} icon={faBars} />
         </button>

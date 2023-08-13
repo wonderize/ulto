@@ -6,6 +6,11 @@
   align-items: center;
 }
 
+.menu {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
 .wrapper {
   max-width: var(--desktop-max-width);
   width: 100%;

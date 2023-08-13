@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -18,11 +20,22 @@
     "@types/react-dom": "18.2.7",
     "@types/react-redux": "^7.1.25",
     "@types/redux-logger": "^3.0.9",
-    "next": "13.4.12",
+    "next": "13.4.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.1.2",
     "redux-logger": "^3.0.6",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.2.3",
+    "@storybook/addon-interactions": "^7.2.3",
+    "@storybook/addon-links": "^7.2.3",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.2.3",
+    "@storybook/nextjs": "^7.2.3",
+    "@storybook/react": "^7.2.3",
+    "@storybook/testing-library": "^0.2.0",
+    "storybook": "^7.2.3"
   }
 }
