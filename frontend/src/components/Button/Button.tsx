@@ -1,3 +1,4 @@
+import buttonStyle from "@/styles/templates/Button.module.css"
 import styles from "./Button.module.css"
 
 interface ButtonProps {
@@ -5,5 +6,5 @@ interface ButtonProps {
 }
 
 export default function Button({ placeholder }: ButtonProps) {
-  return <button className={styles.button}>{placeholder}</button>
+  return <button className={`${buttonStyle.button} ${styles.button}`}>{placeholder}</button>
 }

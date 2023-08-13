@@ -32,7 +32,7 @@ export default function Home() {
         </button>
       </Header>
       <div className={styles.wrapper}>
-        {settingsComponent}
+      {settingsComponent}
         <div className={styles.controls}>
           <button className={styles.control}>
             <FontAwesomeIcon
