@@ -1,12 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import Header from "@/components/Header/Header"
 import ClassCard from "@/components/ClassCard/ClassCard"
 import Settings from "@/components/Settings/Settings"
-import Button from "@/components/Button/Button"
+import IconButton from "@/components/IconButton/IconButton"
 
 import {
   faChevronRight,
@@ -27,32 +26,25 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <Header>
-        {/* TODO: Turn `Button` into reusable component */}
-        <Button
-          style={{gridColumnStart: -1}}
-          placeholder="Войти"
-        />
-        <button className={styles.menu} onClick={handleButtonOnClick}>
-          <FontAwesomeIcon className={styles.menuIcon} icon={faBars} />
-        </button>
-      </Header>
+      <Header settingsState={[isSettingsVisible, setSettingsVisibility]} />
       <div className={styles.wrapper}>
-      {settingsComponent}
+        {settingsComponent}
         <div className={styles.controls}>
-          <button className={styles.control}>
+          <IconButton icon={faChevronLeft} />
+          {/* <button className={styles.control}>
             <FontAwesomeIcon
               className={styles.controlIcon}
               icon={faChevronLeft}
             />
-          </button>
+          </button> */}
           <h1 className={styles.date}>понедельник, 07.08.2023</h1>
-          <button className={styles.control}>
+          <IconButton icon={faChevronRight} />
+          {/* <button className={styles.control}>
             <FontAwesomeIcon
               className={styles.controlIcon}
               icon={faChevronRight}
             />
-          </button>
+          </button> */}
         </div>
         <div className={styles.schedule}>
           <ClassCard

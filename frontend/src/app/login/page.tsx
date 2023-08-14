@@ -7,13 +7,12 @@ export default function Login() {
   return (
     <main className={styles.main}>
       <div className={styles.left}>
-        <Header />
+        <Header isLogin />
         <div className={styles.formWrapper}>
           <LoginForm />
         </div>
       </div>
-      <div className={styles.right}>
-      </div>
+      <div className={styles.right}></div>
     </main>
   )
 }
