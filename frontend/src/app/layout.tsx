@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { config } from "@fortawesome/fontawesome-svg-core"
 
+import StyledComponentsRegistry from "@/lib/styled/registry"
+
 import { Roboto, Open_Sans } from "next/font/google"
 
 import "./globals.css"
@@ -34,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${openSans.variable}`}>
-        {children}
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
   )

@@ -69,8 +69,6 @@ export default function Home() {
 
               return tempDate
             })
-
-            console.log(date.toISOString())
           }}/>
           <h1 className={styles.date}>{date.toDateString()}</h1>
           <IconButton icon={faChevronRight} onClick={(event) => {
@@ -83,8 +81,6 @@ export default function Home() {
 
               return tempDate
             })
-
-            console.log(date.toISOString())
           }}/>
         </div>
         <div className={styles.schedule}>{classesCards}</div>
