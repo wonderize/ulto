@@ -33,8 +33,7 @@ export default function Home() {
   const [date, setDate] = useState(new Date())
 
   const settingsComponent = isSettingsVisible ? <Settings /> : null
-
-  let classesCards = classes.map((value: IClass, index) => (
+  const classesCards = classes.map((value: IClass, index) => (
     <ClassCard
       key={index}
       emphasis={[value.title, value.time]}
@@ -45,6 +44,21 @@ export default function Home() {
       ]}
     />
   ))
+
+  const onButtonClick = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    step: number
+  ) => {
+    event.preventDefault()
+
+    setDate(() => {
+      let tempDate = new Date()
+
+      tempDate.setDate(date.getDate() + step)
+
+      return tempDate
+    })
+  }
 
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/classes?date=${date.toISOString()}`)
@@ -59,29 +73,15 @@ export default function Home() {
       <div className={styles.wrapper}>
         {settingsComponent}
         <div className={styles.controls}>
-          <IconButton icon={faChevronLeft} onClick={(event) => {
-            event.preventDefault()
-
-            setDate(() => {
-              let tempDate = new Date()
-
-              tempDate.setDate(date.getDate() - 1)
-
-              return tempDate
-            })
-          }}/>
+          <IconButton
+            icon={faChevronLeft}
+            onClick={(event) => onButtonClick(event, -1)}
+          />
           <h1 className={styles.date}>{date.toDateString()}</h1>
-          <IconButton icon={faChevronRight} onClick={(event) => {
-            event.preventDefault()
-
-            setDate(() => {
-              let tempDate = new Date()
-
-              tempDate.setDate(date.getDate() + 1)
-
-              return tempDate
-            })
-          }}/>
+          <IconButton
+            icon={faChevronRight}
+            onClick={(event) => onButtonClick(event, 1)}
+          />
         </div>
         <div className={styles.schedule}>{classesCards}</div>
       </div>
