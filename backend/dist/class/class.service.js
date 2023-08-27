@@ -41,6 +41,9 @@ let ClassService = exports.ClassService = class ClassService {
                     gte: gte.toISOString(),
                 },
             },
+            orderBy: {
+                time: "asc",
+            },
         });
     }
 };

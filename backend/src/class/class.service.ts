@@ -35,6 +35,9 @@ export class ClassService {
           gte: gte.toISOString(),
         },
       },
+      orderBy: {
+        time: "asc",
+      },
     })
   }
 }

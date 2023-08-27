@@ -50,17 +50,24 @@ export default function Home() {
   }
 
   const settingsComponent = isSettingsVisible ? <Settings /> : null
-  const classesCards = classes.map((value: IClass, index) => (
-    <ClassCard
-      key={index}
-      emphasis={[value.title, value.time]}
-      details={[
-        { title: "Локация", value: value.location },
-        { title: "Аудитория", value: value.classroom },
-        { title: "Преподаватель", value: value.teacher },
-      ]}
-    />
-  ))
+  const classesCards = classes.map((value: IClass, index) => {
+    const formattedTime = new Date(value.time).toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    })
+
+    return (
+      <ClassCard
+        key={index}
+        emphasis={[value.title, formattedTime]}
+        details={[
+          { title: "Локация", value: value.location },
+          { title: "Аудитория", value: value.classroom },
+          { title: "Преподаватель", value: value.teacher },
+        ]}
+      />
+    )
+  })
 
   useEffect(() => {
     const formattedDate = date.toLocaleDateString("ru-RU", {
