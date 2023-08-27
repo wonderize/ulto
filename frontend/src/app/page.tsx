@@ -14,6 +14,7 @@ import {
 
 import styles from "./page.module.css"
 
+// TODO: Refactor this
 interface IClass {
   id: number
   createdAt: string
@@ -31,19 +32,7 @@ export default function Home() {
   const [isSettingsVisible, setSettingsVisibility] = useState(false)
   const [classes, setClasses] = useState([])
   const [date, setDate] = useState(new Date())
-
-  const settingsComponent = isSettingsVisible ? <Settings /> : null
-  const classesCards = classes.map((value: IClass, index) => (
-    <ClassCard
-      key={index}
-      emphasis={[value.title, value.time]}
-      details={[
-        { title: "Локация", value: value.location },
-        { title: "Аудитория", value: value.classroom },
-        { title: "Преподаватель", value: value.teacher },
-      ]}
-    />
-  ))
+  const [formattedDate, setFormattedDate] = useState("")
 
   const onButtonClick = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
@@ -60,11 +49,33 @@ export default function Home() {
     })
   }
 
+  const settingsComponent = isSettingsVisible ? <Settings /> : null
+  const classesCards = classes.map((value: IClass, index) => (
+    <ClassCard
+      key={index}
+      emphasis={[value.title, value.time]}
+      details={[
+        { title: "Локация", value: value.location },
+        { title: "Аудитория", value: value.classroom },
+        { title: "Преподаватель", value: value.teacher },
+      ]}
+    />
+  ))
+
   useEffect(() => {
+    const formattedDate = date.toLocaleDateString("ru-RU", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    })
+
     fetch(`http://127.0.0.1:8000/classes?date=${date.toISOString()}`)
       .then((data) => data.json())
       .then((data) => setClasses(data))
       .catch((error) => console.error(error))
+
+    setFormattedDate(() => formattedDate)
   }, [date])
 
   return (
@@ -77,7 +88,7 @@ export default function Home() {
             icon={faChevronLeft}
             onClick={(event) => onButtonClick(event, -1)}
           />
-          <h1 className={styles.date}>{date.toDateString()}</h1>
+          <h1 className={styles.date}>{formattedDate}</h1>
           <IconButton
             icon={faChevronRight}
             onClick={(event) => onButtonClick(event, 1)}
