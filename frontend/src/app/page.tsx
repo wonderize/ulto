@@ -33,6 +33,8 @@ export default function Home() {
   const [classes, setClasses] = useState([])
   const [date, setDate] = useState(new Date())
   const [formattedDate, setFormattedDate] = useState("")
+  const [theme, setTheme] = useState("")
+  const [group, setGroup] = useState("")
 
   const onButtonClick = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
@@ -49,7 +51,14 @@ export default function Home() {
     })
   }
 
-  const settingsComponent = isSettingsVisible ? <Settings /> : null
+  const settingsComponent = isSettingsVisible ? (
+    <Settings
+      selectStates={[
+        [theme, setTheme],
+        [group, setGroup],
+      ]}
+    />
+  ) : null
   const classesCards = classes.map((value: IClass, index) => {
     const formattedTime = new Date(value.time).toLocaleTimeString([], {
       hour: "2-digit",

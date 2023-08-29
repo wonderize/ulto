@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { ChangeEvent, Dispatch, SetStateAction } from "react"
 
 import inputStyle from "@/styles/templates/Input.module.css"
 import styles from "./Select.module.css"
@@ -10,13 +10,17 @@ interface SelectProps {
       title: string
     }
   ]
+  optionState: [option: string, setOption: Dispatch<SetStateAction<string>>]
 }
 
-export default function Select({ values }: SelectProps) {
-  const [option, setOption] = useState("")
+export default function Select({ values, optionState }: SelectProps) {
+  const [option, setOption] = optionState
+
+  const onChange = (event: ChangeEvent<HTMLSelectElement>) =>
+    setOption(event.target.value)
 
   const options = values.map((value, index) => (
-    <option key={index} value="{value.value}">
+    <option key={index} value={value.value}>
       {value.title}
     </option>
   ))
@@ -27,7 +31,7 @@ export default function Select({ values }: SelectProps) {
         className={styles.select}
         name="name"
         value={option}
-        onChange={(event) => setOption(event.target.value)}
+        onChange={onChange}
         required
       >
         <option value="" disabled hidden>

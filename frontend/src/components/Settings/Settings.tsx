@@ -4,21 +4,30 @@ import Select from "@/components/Select/Select"
 
 import styles from "./Settings.module.css"
 
-export default function Settings() {
+// FIXME: Fix this interface
+interface SettingsProps {
+  selectStates: [any, Dispatch<SetStateAction<any>>][]
+}
+
+export default function Settings({ selectStates }: SettingsProps) {
+  const [theme, setTheme] = selectStates[0]
+  const [group, setGroup] = selectStates[1]
   // FIXME: Fix this types
   const [groups, setGroups]: [any, any] = useState([])
+
+  // FIXME: Fix this types
   const themes: any = [
     {
       value: "system",
-      title: "Системная"
+      title: "Системная",
     },
     {
       value: "dark",
-      title: "Темная"
+      title: "Темная",
     },
     {
       value: "light",
-      title: "Cветлая"
+      title: "Cветлая",
     },
   ]
 
@@ -37,18 +46,14 @@ export default function Settings() {
           <h2 className={styles.parameterTitle}>Выбор группы</h2>
           <p className={styles.description}>Выбор группы по умолчанию</p>
         </div>
-        <Select
-          values={groups}
-        />
+        <Select values={groups} optionState={[group, setGroup]} />
       </div>
       <div className={styles.parameter}>
         <div className={styles.textWrapper}>
           <h2 className={styles.parameterTitle}>Тема</h2>
           <p className={styles.description}>Выбор темы по умолчанию</p>
         </div>
-        <Select
-          values={themes}
-        />
+        <Select values={themes} optionState={[theme, setTheme]} />
       </div>
     </div>
   )
