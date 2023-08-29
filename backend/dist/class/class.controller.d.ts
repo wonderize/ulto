@@ -2,8 +2,9 @@ import { ClassService } from "./class.service";
 export declare class ClassController {
     private classService;
     constructor(classService: ClassService);
-    find({ date }: {
+    find(filters: {
         date: string;
+        groupId: string;
     }): Promise<{
         id: number;
         createdAt: Date;

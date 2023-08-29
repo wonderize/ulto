@@ -6,7 +6,7 @@ import styles from "./Select.module.css"
 interface SelectProps {
   values: [
     {
-      value: string
+      id: number
       title: string
     }
   ]
@@ -20,7 +20,7 @@ export default function Select({ values, optionState }: SelectProps) {
     setOption(event.target.value)
 
   const options = values.map((value, index) => (
-    <option key={index} value={value.value}>
+    <option key={index} value={value.id}>
       {value.title}
     </option>
   ))

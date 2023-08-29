@@ -19,9 +19,9 @@ let ClassController = exports.ClassController = class ClassController {
     constructor(classService) {
         this.classService = classService;
     }
-    find({ date }) {
-        if (date) {
-            return this.classService.findByDate(date);
+    find(filters) {
+        if (filters) {
+            return this.classService.findByFilters(filters);
         }
         return this.classService.findAll();
     }

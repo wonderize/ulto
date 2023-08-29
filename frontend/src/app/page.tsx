@@ -34,7 +34,7 @@ export default function Home() {
   const [date, setDate] = useState(new Date())
   const [formattedDate, setFormattedDate] = useState("")
   const [theme, setTheme] = useState("")
-  const [group, setGroup] = useState("")
+  const [group, setGroup] = useState("1")
 
   const onButtonClick = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
@@ -87,13 +87,13 @@ export default function Home() {
     })
 
     // TODO: Remove hardcoded URLs
-    fetch(`http://127.0.0.1:8000/classes?date=${date.toISOString()}`)
+    fetch(`http://127.0.0.1:8000/classes?date=${date.toISOString()}&groupId=${group}`)
       .then((data) => data.json())
       .then((data) => setClasses(data))
       .catch((error) => console.error(error))
 
     setFormattedDate(() => formattedDate)
-  }, [date])
+  }, [date, group])
 
   return (
     <main className={styles.main}>

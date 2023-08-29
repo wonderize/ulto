@@ -20,7 +20,7 @@ export class ClassService {
     })
   }
 
-  async findByDate(date: string) {
+  async findByFilters({ date, groupId }: { date: string; groupId: string }) {
     const gte = new Date(date)
     const lte = new Date(date)
 
@@ -34,6 +34,10 @@ export class ClassService {
         time: {
           lte: lte.toISOString(),
           gte: gte.toISOString(),
+        },
+        group: {
+          // FIXME: Fix this
+          id: parseInt(groupId),
         },
       },
       orderBy: {

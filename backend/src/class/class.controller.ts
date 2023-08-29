@@ -6,10 +6,11 @@ import { ClassService } from "./class.service"
 export class ClassController {
   constructor(private classService: ClassService) {}
 
+  // FIXME: Rework @Query
   @Get()
-  find(@Query() { date }: { date: string }) {
-    if (date) {
-      return this.classService.findByDate(date)
+  find(@Query() filters: { date: string; groupId: string }) {
+    if (filters) {
+      return this.classService.findByFilters(filters)
     }
 
     return this.classService.findAll()

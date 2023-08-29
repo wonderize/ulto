@@ -28,7 +28,10 @@ export declare class ClassService {
         teacher: string;
         groupId: number;
     } | null>;
-    findByDate(date: string): Promise<{
+    findByFilters({ date, groupId }: {
+        date: string;
+        groupId: string;
+    }): Promise<{
         id: number;
         createdAt: Date;
         createdBy: number;
