@@ -30,7 +30,7 @@ let ClassController = exports.ClassController = class ClassController {
     }
 };
 __decorate([
-    (0, common_1.Get)(""),
+    (0, common_1.Get)(),
     __param(0, (0, common_1.Query)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),

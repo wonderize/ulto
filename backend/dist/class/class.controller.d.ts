@@ -15,6 +15,7 @@ export declare class ClassController {
         location: string;
         classroom: string;
         teacher: string;
+        groupId: number;
     }[]>;
     findOne(id: number): Promise<{
         id: number;
@@ -27,5 +28,6 @@ export declare class ClassController {
         location: string;
         classroom: string;
         teacher: string;
+        groupId: number;
     } | null>;
 }

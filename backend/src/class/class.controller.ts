@@ -6,7 +6,7 @@ import { ClassService } from "./class.service"
 export class ClassController {
   constructor(private classService: ClassService) {}
 
-  @Get("")
+  @Get()
   find(@Query() { date }: { date: string }) {
     if (date) {
       return this.classService.findByDate(date)

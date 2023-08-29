@@ -13,6 +13,7 @@ export declare class ClassService {
         location: string;
         classroom: string;
         teacher: string;
+        groupId: number;
     }[]>;
     findOne(id: number): Promise<{
         id: number;
@@ -25,6 +26,7 @@ export declare class ClassService {
         location: string;
         classroom: string;
         teacher: string;
+        groupId: number;
     } | null>;
     findByDate(date: string): Promise<{
         id: number;
@@ -37,5 +39,6 @@ export declare class ClassService {
         location: string;
         classroom: string;
         teacher: string;
+        groupId: number;
     }[]>;
 }

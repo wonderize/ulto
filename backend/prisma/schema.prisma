@@ -25,6 +25,12 @@ model User {
   @@map("users")
 }
 
+model Group {
+  id      Int     @id @default(autoincrement())
+  title   String  @unique
+  classes Class[]
+}
+
 model Class {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
@@ -37,6 +43,8 @@ model Class {
   location  String
   classroom String
   teacher   String
+  group     Group    @relation(fields: [groupId], references: [id])
+  groupId   Int
 
   @@map("classes")
 }
