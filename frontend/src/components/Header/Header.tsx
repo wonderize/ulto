@@ -1,3 +1,4 @@
+"use client"
 import { Dispatch, SetStateAction } from "react"
 
 import Logo from "../Logo/Logo"
@@ -6,7 +7,7 @@ import Button from "../Button/Button"
 
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons"
 
-import styles from "./Header.module.css"
+import styled from "styled-components"
 
 type SettingsState = [boolean, Dispatch<SetStateAction<boolean>>]
 
@@ -20,6 +21,11 @@ export default function Header({ isLogin, user, settingsState }: HeaderProps) {
   const [isSettingsVisible, setSettingsVisibility] = settingsState
     ? settingsState
     : [null, null]
+
+    const Header = styled.header `
+      
+    `
+    
 
   const onClick = () => {
     if (setSettingsVisibility !== null && isSettingsVisible !== null) {
@@ -37,8 +43,8 @@ export default function Header({ isLogin, user, settingsState }: HeaderProps) {
   )
 
   return (
-    <header className={styles.header}>
-      <div className={styles.wrapper}>
+    <header className="Header">
+      <div className="Header_wrapper">
         {menuButton}
         <Logo />
         {userButton}
