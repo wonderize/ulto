@@ -1,12 +1,11 @@
+import { Dispatch, SetStateAction, useEffect, useState } from "react"
+
 import Select from "@/components/Select/Select"
 
 import styles from "./Settings.module.css"
 
-<<<<<<< Updated upstream
-export default function Settings() {
-=======
 // FIXME: Fix this interface
-export interface SettingsProps {
+interface SettingsProps {
   selectStates: [any, Dispatch<SetStateAction<any>>][]
 }
 
@@ -39,7 +38,6 @@ export default function Settings({ selectStates }: SettingsProps) {
       .catch((error) => console.error(error))
   }, [])
 
->>>>>>> Stashed changes
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.title}>Настройки</h1>
@@ -48,14 +46,14 @@ export default function Settings({ selectStates }: SettingsProps) {
           <h2 className={styles.parameterTitle}>Выбор группы</h2>
           <p className={styles.description}>Выбор группы по умолчанию</p>
         </div>
-        <Select />
+        <Select values={groups} optionState={[group, setGroup]} />
       </div>
       <div className={styles.parameter}>
         <div className={styles.textWrapper}>
           <h2 className={styles.parameterTitle}>Тема</h2>
           <p className={styles.description}>Выбор темы по умолчанию</p>
         </div>
-        <Select />
+        <Select values={themes} optionState={[theme, setTheme]} />
       </div>
     </div>
   )
